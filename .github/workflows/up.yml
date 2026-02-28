@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run:   hugo mod get && hugo mod npm pack && npm install  hugo --minify
+        run:   hugo mod get && hugo mod npm pack && npm install && hugo --minify
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.4.2
         with:
