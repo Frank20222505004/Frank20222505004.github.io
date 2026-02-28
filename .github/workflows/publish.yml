@@ -73,9 +73,6 @@ jobs:
       - name: Install npm Packages
         run: npm ci
 
-      - name: Build Hugo
-        run: hugo --minify
-
       - name: Build
         run: hugo mod get && hugo mod npm pack && npm install  &&  hugo --minify  --gc
       - name: Deploy 🚀
