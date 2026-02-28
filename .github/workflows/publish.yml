@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - main
-
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
   update_hugo_npm_dependencies:
     name: Update Hugo npm Dependencies
@@ -75,10 +78,8 @@ jobs:
 
       - name: Build
         run: hugo mod get && hugo mod npm pack && npm install  &&  hugo --minify  --gc
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.4.2
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-            branch: gh-pages
-            folder: public
-            clean: true
-            single-commit: true
+          path: ./public
