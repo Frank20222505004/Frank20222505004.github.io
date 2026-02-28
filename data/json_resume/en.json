@@ -11,11 +11,7 @@
       "city": "San Francisco"
     },
     "profiles": [
-      {
-        "network": "GitHub",
-        "username": "hugo-theme-gruvbox",
-        "url": "https://github.com/schnerring/hugo-theme-gruvbox"
-      },
+    
       {
         "network": "GitHub",
         "username": "hugo-mod-json-resume",
